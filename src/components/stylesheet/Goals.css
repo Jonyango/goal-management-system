@@ -1,0 +1,41 @@
+.goals-main-div{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+    background-color: #ffffff;
+    
+    border: 1px solid red;
+}
+.search-input{
+    border:2px solid #eff2fa;
+    align-self: center;
+    margin:15px;
+    border-radius: 12px;
+    background-color: #eff2fa;
+}
+
+#search-input{
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+
+}
+::placeholder{
+    letter-spacing: 0.15em;
+    font-size: 1.0em;
+}
+
+.icon-2{
+    font-size: 0.8em;
+    padding-left: 12px;
+}
+
+.title{
+    padding-left: 60px;
+    letter-spacing: 0.075em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    
+}
