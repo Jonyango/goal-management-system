@@ -10,25 +10,21 @@ const Quotes = () => {
   };
   const [quote, updateQuote] = useState("");
   const [author, updateAuthor] = useState("");
-  const [quotes, updateQuotes] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => {getQuote()}, []);
+
+  function getQuote() {
     axios.get(config.apiUrl).then((res) => {
       let data = res.data.quotes;
-      updateQuotes(data);
 
-      let randomNum = Math.floor(Math.random() * quotes.length);
-      let randomQuote = quotes[randomNum];
+      let randomNum = Math.floor(Math.random() * data.length);
+      let randomQuote = data[randomNum];
 
       updateAuthor(randomQuote["author"]);
       updateQuote(randomQuote["quote"]);
 
       console.log(randomQuote);
     });
-  });
-
-  function getQuote() {
-   
   }
 
   return (
