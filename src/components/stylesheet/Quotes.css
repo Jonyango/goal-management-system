@@ -1,15 +1,22 @@
 .main-quote-div{
-    border: 2px solid yellow;
     align-self: center;
     width: 28%;
     margin-left: 20px;
     margin-right: 20px;
     padding:20px;
+    border-radius: .6em;
+    border-top: 1px solid #f1f3f8;
+    box-shadow: 
+    0 20px 30px 0 rgba(0,0,0,0.1),
+    0 4px 4px 0 rgba(0,0,0,.15)
+    ;
+
 }
 .quote-title{
     font-family:'Times New Roman', Times, serif;
     line-height: 1.8rem;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .quote-message{
