@@ -1,21 +1,24 @@
-import React,{useState} from 'react';
-import SideNavigation from "./components/SideNavigation";
-import Goals from "./components/Goals";
-import Quotes from "./components/Quotes";
+import React from 'react';
+import{Route,BrowserRouter,Switch} from "react-router-dom";
+
 import './App.css';
+import HomePage from './routes/Home';
+import GoalPage from './routes/Goals';
 
 function App() {
-  const[searchInput,setSearchInput]=useState();
 
   return (
-    <div className="App">
-      <SideNavigation />
-      
-      <Goals/>
-      <Quotes/>
-      
-      
-    </div>
+    <BrowserRouter>
+    <Switch>
+      <Route path="/" exact>
+        <HomePage/>
+      </Route>
+      <Route path="/goals">
+        <GoalPage/>
+      </Route>
+    </Switch>
+    </BrowserRouter>
+    
   );
 }
 

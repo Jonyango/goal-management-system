@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./volleyball-ball-solid.svg"
-import "././stylesheet/SideNavigation.css"
+import "././stylesheet/SideNavigation.css";
+import {Link} from "react-router-dom"
 
 const SideNavigation =()=>{
     return(
@@ -13,9 +14,11 @@ const SideNavigation =()=>{
                 <i className="fa fa-plus"></i>
                 </button>
                 <div className="overall-nav-btn">
-                <button className="nav-button">
+               <Link to="/goals">
+               <button className="nav-button">
                 <i className=" fa fa-home icon"></i>
                 </button>
+               </Link>
             <button className="nav-button">
                 <i className="fa fa-cogs icon"></i>
                 </button>

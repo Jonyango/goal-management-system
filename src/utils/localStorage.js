@@ -89,7 +89,7 @@ LocalStorage.rowExists = (object) => {
   }
 };
 /**
- * check that note exists by id in specific notebook
+ * check that goal exists by id in specific category
  **/
 LocalStorage.rowExistsIn = (goalCategory, object) => {
   const List = JSON.parse(localStorage.getItem(goalCategory));
@@ -102,7 +102,7 @@ LocalStorage.rowExistsIn = (goalCategory, object) => {
   }
 };
 /**
- * get all notes inside of the notebooks or else
+ * get all goals inside of the goalCategories or else
  **/
 LocalStorage.getAllGoals = () => {
   let GoalNextMonth = LocalStorage.getGoalsCategories("Next Month");
@@ -132,7 +132,7 @@ LocalStorage.findId = (id) => {
 };
 
 /**
- * update a note by id
+ * update a goal by id
  **/
 LocalStorage.updateId = (id, itemObject) => {
   const List = JSON.parse(
