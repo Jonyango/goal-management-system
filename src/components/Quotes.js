@@ -23,7 +23,6 @@ const Quotes = () => {
       updateAuthor(randomQuote["author"]);
       updateQuote(randomQuote["quote"]);
 
-      console.log(randomQuote);
     });
   }
 
