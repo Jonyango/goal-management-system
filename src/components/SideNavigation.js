@@ -11,26 +11,32 @@ const NotesColorButton = ({ color1, color2, color3, color4, color5, onClickMetho
         className="notes-color-btn"
         style={{ backgroundColor: color1 }}
         onClick={onClickMethod}
+        id={1}
       ></button>
       <button
         className="notes-color-btn"
         style={{ backgroundColor: color2 }}
         onClick={onClickMethod}
+        id={2}
+        
       ></button>
       <button
         className="notes-color-btn"
         style={{ backgroundColor: color3 }}
         onClick={onClickMethod}
+        id={3}
       ></button>
       <button
         className="notes-color-btn"
         style={{ backgroundColor: color4 }}
         onClick={onClickMethod}
+        id={4}
       ></button>
       <button
         className="notes-color-btn"
         style={{ backgroundColor: color5 }}
         onClick={onClickMethod}
+        id={5}
       ></button>
     </div>
   );
