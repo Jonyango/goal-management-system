@@ -16,7 +16,10 @@ const Goals=({currentNotes})=>{
                 />
             </form>
             <h1 className="title">Goals!</h1>
+            <div id="goals">
             {currentNotes}
+            </div>
+            
         </div>
     );
 };

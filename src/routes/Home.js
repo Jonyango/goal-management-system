@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import SideNavigation from "../components/SideNavigation";
 import Goals from "../components/Goals";
 import Quotes from "../components/Quotes";
-// import './App.css';
 
 const Goal = ({ backgroundColor }) => {
   return (
-    <div>
-      <h1 style={{ color: backgroundColor }}>I am here</h1>
+    <div id="single-goal"
+    style={{
+      backgroundColor:backgroundColor,
+      borderRadius:"12px",
+      height:"200px",
+      width:"200px",
+      marginBottom:"30px",
+    }}
+    >
+
+      <h1>I am here</h1>
     </div>
   );
 };
@@ -29,7 +37,7 @@ function HomePage() {
     appendedCount = showNotes;
     appendedCount = appendedCount + 1;
     setShowNotes(appendedCount);
-    
+
     let tempColor = noteBackgroundColor;
     tempColor = colorArray[id-1];
     setNoteBackgroundColor(tempColor);
