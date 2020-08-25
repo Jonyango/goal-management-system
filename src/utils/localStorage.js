@@ -69,7 +69,7 @@ LocalStorage.rmGoalCategory = (goalCategory) => {
  */
 LocalStorage.goal = (id) => {
   if (LocalStorage.getGoals() !== null) {
-    const List = Json.parse(LocalStorage.getGoals());
+    const List = JSON.parse(LocalStorage.getGoals());
     return List[id];
   }
   return [];
@@ -105,16 +105,16 @@ LocalStorage.rowExistsIn = (goalCategory, object) => {
  * get all goals inside of the goalCategories or else
  **/
 LocalStorage.getAllGoals = () => {
-  let GoalNextMonth = LocalStorage.getGoalsCategories("Next Month");
+  let Monthly = LocalStorage.getGoalsCategories("Monthly");
   let Today = LocalStorage.getGoalsCategories("Today");
   let Weekly = LocalStorage.getGoalsCategories("Weekly");
   let Goals = LocalStorage.getGoalsCategories("Goals");
   let All;
-  GoalNextMonth = GoalNextMonth !== null ? JSON.parse(GoalNextMonth) : [];
+  Monthly = Monthly !== null ? JSON.parse(Monthly) : [];
   Today = Today !== null ? JSON.parse(Today) : [];
   Weekly = Weekly !== null ? JSON.parse(Weekly) : [];
   Goals = Goals !== null ? JSON.parse(Goals) : [];
-  All = [...GoalNextMonth, ...Today, ...Weekly, ...Goals];
+  All = [...Monthly, ...Today, ...Weekly, ...Goals];
   return All;
 };
 /**

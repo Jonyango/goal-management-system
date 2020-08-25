@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fontawesome.com/icons/volleyball-ball?style=solid");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .main-side-navigation-div{
     height: 100vh;
@@ -15,6 +15,11 @@
     align-self: center;
 }
 
+#notes-color-div{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
 
 
 .add-goal-button{
@@ -52,4 +57,13 @@
 .icon{
     color:#474343;
     font-size: 1.5em;
+}
+
+.notes-color-btn{
+    margin-top: 10px;
+    border-radius: 50%;
+    height:18px;
+    width: 18px;
+    border:none;
+    cursor: pointer;
 }
