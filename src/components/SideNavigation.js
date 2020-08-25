@@ -4,29 +4,49 @@ import "././stylesheet/SideNavigation.css";
 import { Link } from "react-router-dom";
 
 // create a component amd use state to toggle the visibility of the component
-const NotesColorButton = ({ color1, color2, color3, color4, color5 }) => {
+const NotesColorButton = ({ color1, color2, color3, color4, color5, onClickMethod }) => {
   return (
     <div id="notes-color-div">
-      <button className="notes-color-btn" style={{ backgroundColor: color1 }}></button>
-      <button className="notes-color-btn" style={{ backgroundColor: color2 }}></button>
-      <button className="notes-color-btn" style={{ backgroundColor: color3 }}></button>
-      <button className="notes-color-btn" style={{ backgroundColor: color4 }}></button>
-      <button className="notes-color-btn" style={{ backgroundColor: color5 }}></button>
+      <button
+        className="notes-color-btn"
+        style={{ backgroundColor: color1 }}
+        onClick={onClickMethod}
+      ></button>
+      <button
+        className="notes-color-btn"
+        style={{ backgroundColor: color2 }}
+        onClick={onClickMethod}
+      ></button>
+      <button
+        className="notes-color-btn"
+        style={{ backgroundColor: color3 }}
+        onClick={onClickMethod}
+      ></button>
+      <button
+        className="notes-color-btn"
+        style={{ backgroundColor: color4 }}
+        onClick={onClickMethod}
+      ></button>
+      <button
+        className="notes-color-btn"
+        style={{ backgroundColor: color5 }}
+        onClick={onClickMethod}
+      ></button>
     </div>
   );
 };
 
-const SideNavigation = () => {
-  let defaultState=false;
+const SideNavigation = ({ onClickMethod }) => {
+  let defaultState = false;
   const [showNotesButton, setNotesButton] = useState(defaultState);
   const onClick = () => {
     // Assign the current value of the showNotesButton to a temp variable
     //Negate the temp varibale  set the state and repeat
-    defaultState=showNotesButton
-    defaultState=!defaultState;
-    setNotesButton(defaultState)
+    defaultState = showNotesButton;
+    defaultState = !defaultState;
+    setNotesButton(defaultState);
   };
-  // 
+  //
 
   return (
     <div className="main-side-navigation-div">
@@ -44,6 +64,7 @@ const SideNavigation = () => {
           color3="#f5972c"
           color4="#7049f0"
           color5="#0aa4f6"
+          onClickMethod={onClickMethod}
         />
       ) : null}
       <div className="overall-nav-btn">
