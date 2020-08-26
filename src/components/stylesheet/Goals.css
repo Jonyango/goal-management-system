@@ -3,8 +3,9 @@
     flex-direction: column;
     width:60%;
     background-color: #ffffff;
+    border-right:1px solid #eff2fa;
     
-    border: 1px solid red;
+    
 }
 .search-input{
     border:2px solid #eff2fa;

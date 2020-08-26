@@ -1,9 +1,11 @@
 import React,{useState} from "react";
+
 import "././stylesheet/Goals.css"
 
 
 const Goals=({currentNotes})=>{
-    const[searchInput,setSearchInput]=useState()
+    const[searchInput,setSearchInput]=useState();
+    
     return(
         <div className="goals-main-div">
             <form className="search-input">
@@ -19,6 +21,7 @@ const Goals=({currentNotes})=>{
             <div id="goals">
             {currentNotes}
             </div>
+            
             
         </div>
     );
