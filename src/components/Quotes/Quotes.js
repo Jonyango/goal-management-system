@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./stylesheet/Quotes.css";
+import "./Quotes.css";
 import QuoteBox from "./QuoteBox";
 import axios from "axios";
 

@@ -2,8 +2,8 @@ import React from 'react';
 import{Route,BrowserRouter,Switch} from "react-router-dom";
 
 import './App.css';
-import HomePage from './routes/Home';
-import GoalPage from './routes/Goals';
+import HomePage from '../../routes/HomePage';
+import GoalPage from '../../routes/GoalsPage';
 
 function App() {
 

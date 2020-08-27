@@ -1,0 +1,19 @@
+.goal-page-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    height:100vh;
+    background-color: #eff2fa;
+
+}
+
+.goal-page-divs{
+background-color: white;
+    margin:10px;
+    text-align: center;
+    border-radius:14px;
+    /* height:80%; */
+    box-shadow: 
+    0 20px 30px 0 rgba(0,0,0,0.1),
+    0 4px 4px 0 rgba(0,0,0,.15)
+    ;
+}

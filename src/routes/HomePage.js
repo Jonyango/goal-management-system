@@ -1,37 +1,12 @@
 import React, { useState } from "react";
-import SideNavigation from "../components/SideNavigation";
-import Goals from "../components/Goals";
-import Quotes from "../components/Quotes";
+import SideNavigation from "../components/SideNavigation/SideNavigation";
+import Goals from "../components/Goals/Goals";
+import Quotes from "../components/Quotes/Quotes";
 import Modal from "../components/Modal/Modal";
+import GoalContainer from '../components/GoalContainer/GoalContainer'
 import GoalInputForm from "../components/goal input form/GoalInputForm";
 
-const Goal = ({ backgroundColor, onClick }) => {
-  return (
-    <div
-      id="single-goal"
-      style={{
-        backgroundColor: backgroundColor,
-        borderRadius: "12px",
-        height: "200px",
-        width: "200px",
-        marginBottom: "30px",
-        justifyContent: "center",
-        cursor: "pointer",
-      }}
-      onClick={onClick}
-    >
-      <p
-        style={{
-          textAlign: "center",
-          margin: "80px 60px",
-          fontWeight: "lighter",
-        }}
-      >
-        click to add goal
-      </p>
-    </div>
-  );
-};
+
 let colorArray = ["#c6d947", "#f3542a", "#f5972c", "#7049f0", "#0aa4f6"];
 
 function HomePage() {
@@ -65,7 +40,7 @@ function HomePage() {
     let appendedComponents = [];
     for (let i = 0; i < showNotes; i++) {
       appendedComponents.push(
-        <Goal key={i} backgroundColor={noteBackgroundColor} onClick={openModal} />
+        <GoalContainer key={i} backgroundColor={noteBackgroundColor} onClick={openModal} />
       );
     }
     return appendedComponents;

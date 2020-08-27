@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-import "././stylesheet/Goals.css"
+import "./Goals.css"
 
 
 const Goals=({currentNotes})=>{

@@ -1,5 +1,5 @@
 import React from "react";
-import "./stylesheet/Quotes.css";
+import "./Quotes.css";
 
 const QuoteBox = ({ quote, author }) => {
   return (

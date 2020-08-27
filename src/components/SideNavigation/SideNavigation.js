@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "./volleyball-ball-solid.svg";
-import "././stylesheet/SideNavigation.css";
+import "./SideNavigation.css";
 import { Link } from "react-router-dom";
 
 // create a component amd use state to toggle the visibility of the component

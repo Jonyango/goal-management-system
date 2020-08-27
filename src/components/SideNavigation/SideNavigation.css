@@ -31,6 +31,7 @@
     background-color: #474343;
     border:none;
     cursor: pointer;
+    outline:none;
 }
 
 .add-goal-button i{
@@ -52,6 +53,7 @@
     border:none;
     background-color: transparent;
     cursor: pointer;
+    outline:none;
 }
 
 .icon{
@@ -66,4 +68,5 @@
     width: 18px;
     border:none;
     cursor: pointer;
+    outline:none;
 }
