@@ -8,7 +8,7 @@ const GoalPage = () => {
       <div className="goal-page-divs"></div>
       <div className="goal-page-divs"></div>
       <div className="goal-page-divs">
-        <h3>Add your Goal!</h3>
+         <h3>Add your Goal!</h3>
         <GoalInputForm />
       </div>
       <button>Home</button>

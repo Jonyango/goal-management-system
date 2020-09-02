@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from "react-jss";
 
 import "./Goals.css";
 
-const useStyles=createUseStyles({
-    wrapper:{
-        textAlign:'center',
-        fontSize:'1.8em',
-        fontWeight:'lighter'
-    }
-
+const useStyles = createUseStyles({
+  wrapper: {
+    textAlign: "center",
+    fontSize: "1.8em",
+    fontWeight: "lighter",
+  },
 });
 
-const Goals = ({ currentNotes }) => {
+const Goals = ({ currentNotes, showNotes }) => {
   const [searchInput, setSearchInput] = useState();
-  const classes=useStyles();
+  const classes = useStyles();
 
   return (
     <div className="goals-main-div">
@@ -31,7 +30,7 @@ const Goals = ({ currentNotes }) => {
       </form>
       <h1 className="title">Goals!</h1>
       <div id="goals">{currentNotes}</div>
-      <p className={classes.wrapper}>Your Goals will appear here</p>
+      {showNotes === 0 ? <p className={classes.wrapper}>Your Goals will appear here</p> : null}
     </div>
   );
 };

@@ -46,19 +46,21 @@ function HomePage() {
 
   // I have a fucntion that loops to add the componets in a list
   const getAppendedComponents = () => {
+    let tempGoalRegistry = [...goalsRegistryData];
     let appendedComponents = [];
     for (let i = 0; i < showNotes; i++) {
       appendedComponents.unshift(
-        <GoalContainer key={i} backgroundColor={noteBackgroundColor} onClick={openModal} />
+        <GoalContainer key={i} backgroundColor={noteBackgroundColor} onClick={openModal} goals={tempGoalRegistry}/>
       );
     }
+    console.log(appendedComponents)
     return appendedComponents;
   };
 
   return (
     <div className="App">
       <SideNavigation onClickMethod={onClickMethod} />
-      <Goals currentNotes={getAppendedComponents()} />
+      <Goals currentNotes={getAppendedComponents()} showNotes={showNotes}/>
       <Quotes />
       <Modal
         handleCloseAndSave={closeModal}
