@@ -5,6 +5,7 @@
     height: 100vh;
     width:12%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     border-right: 1px solid #f1f3f8;
 }
@@ -19,6 +20,7 @@
     align-self: center;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
@@ -43,6 +45,7 @@
     display:flex;
     flex-direction: column;
     align-self: center;
+    flex-wrap: wrap;
 }
 
 .nav-button{

@@ -1,5 +1,6 @@
 .goals-main-div{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     width:60%;
     background-color: #ffffff;

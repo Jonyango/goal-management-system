@@ -11,7 +11,7 @@ const Quotes = () => {
   const [quote, updateQuote] = useState("");
   const [author, updateAuthor] = useState("");
 
-  useEffect(() => {getQuote()}, []);
+  useEffect(() => {getQuote()}, [updateAuthor,updateQuote]);
 
   function getQuote() {
     axios.get(config.apiUrl).then((res) => {
