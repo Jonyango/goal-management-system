@@ -29,7 +29,9 @@ const Goals = ({ currentNotes, showNotes }) => {
         />
       </form>
       <h1 className="title">Goals!</h1>
-      <div id="goals">{currentNotes}</div>
+      <div id="goals">{currentNotes.map((item,index)=>(
+        < div key={index}>{item}</div>
+      ))}</div>
       {showNotes === 0 ? <p className={classes.wrapper}>Your Goals will appear here</p> : null}
     </div>
   );

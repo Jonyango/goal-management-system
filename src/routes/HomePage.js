@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import SideNavigation from "../components/SideNavigation/SideNavigation";
 import Goals from "../components/Goals/Goals";
 import Quotes from "../components/Quotes/Quotes";
@@ -14,8 +14,10 @@ function HomePage() {
 
   // a variable the tracks the background color of the note
 
+  const [goalContainerArray,updateGoalContainerArray]=useState([]);
   const [showNotes, setShowNotes] = useState(appendedCount);
   const [noteBackgroundColor, setNoteBackgroundColor] = useState("");
+  
 
   const [showModal, setShowModal] = useState(false);
 
@@ -24,6 +26,8 @@ function HomePage() {
 
   const [goalsRegistryData, updateGoalsRegistryData] = useState([]);
 
+
+  
   // when my button is clicked, I update the number count of the componets added
   const onClickMethod = (event) => {
     const id = event.target.id;
@@ -33,34 +37,37 @@ function HomePage() {
 
     let tempColor = noteBackgroundColor;
     tempColor = colorArray[id - 1];
+    getAppendedComponents();
     setNoteBackgroundColor(tempColor);
+    console.log(goalContainerArray)
+    
   };
 
   const handleGoalAdd = (newGoal) => {
     let tempGoalRegistry = [...goalsRegistryData];
-    tempGoalRegistry.unshift(newGoal);
+    tempGoalRegistry.push(newGoal);
     updateGoalsRegistryData(tempGoalRegistry);
-    console.log(tempGoalRegistry);
-    console.log("hello");
   };
 
-  // I have a fucntion that loops to add the componets in a list
+  // I have a function that loops to add the componets in a list
   const getAppendedComponents = () => {
-    let tempGoalRegistry = [...goalsRegistryData];
-    let appendedComponents = [];
-    for (let i = 0; i < showNotes; i++) {
+    let appendedComponents = [...goalContainerArray];
       appendedComponents.unshift(
-        <GoalContainer key={i} backgroundColor={noteBackgroundColor} onClick={openModal} goals={tempGoalRegistry}/>
+        <GoalContainer
+        backgroundColor={noteBackgroundColor} 
+        onClick={openModal} 
+        />
       );
-    }
-    console.log(appendedComponents)
-    return appendedComponents;
+    
+    updateGoalContainerArray(appendedComponents);
+    
   };
 
   return (
     <div className="App">
       <SideNavigation onClickMethod={onClickMethod} />
-      <Goals currentNotes={getAppendedComponents()} showNotes={showNotes}/>
+      <Goals currentNotes={goalContainerArray} 
+      showNotes={showNotes}/>
       <Quotes />
       <Modal
         handleCloseAndSave={closeModal}
