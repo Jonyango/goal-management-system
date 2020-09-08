@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
   },
 });
 
-const Goals = ({ currentNotes, showNotes }) => {
+const Goals = ({currentNotes}) => {
   const [searchInput, setSearchInput] = useState();
   const classes = useStyles();
 
@@ -22,6 +22,7 @@ const Goals = ({ currentNotes, showNotes }) => {
         <input
           id="search-input"
           type="search"
+          value={searchInput}
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
@@ -32,7 +33,7 @@ const Goals = ({ currentNotes, showNotes }) => {
       <div id="goals">{currentNotes.map((item,index)=>(
         < div key={index}>{item}</div>
       ))}</div>
-      {showNotes === 0 ? <p className={classes.wrapper}>Your Goals will appear here</p> : null}
+      {currentNotes.length === 0 ? <p className={classes.wrapper}>Your Goals will appear here</p> : null}
     </div>
   );
 };

@@ -1,11 +1,10 @@
 import React from "react";
 
-const GoalContainer = ({ backgroundColor, onClick}) => {
+const GoalContainer = ({ backgroundColor, onClick,goals}) => {
   return (
     <div
-      id="single-goal"
       style={{
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor ===''?'tomato':backgroundColor,
         borderRadius: "12px",
         height: "200px",
         width: "200px",
@@ -15,7 +14,7 @@ const GoalContainer = ({ backgroundColor, onClick}) => {
       }}
       onClick={onClick}
     >
-      {/* {goals.length === 0 ? (
+      {goals.length === 0 ? (
         <p
           style={{
             textAlign: "center",
@@ -38,7 +37,7 @@ const GoalContainer = ({ backgroundColor, onClick}) => {
             {goal.title}
           </p>
         ))
-      )} */}
+      )}
     </div>
   );
 };
