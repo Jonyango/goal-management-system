@@ -16,7 +16,7 @@ function HomePage() {
 
   const [goalContainerArray,updateGoalContainerArray]=useState([]);
   const [showNotes, setShowNotes] = useState(appendedCount);
-  const [noteBackgroundColor, setNoteBackgroundColor] = useState("");
+  // const [noteBackgroundColor, setNoteBackgroundColor] = useState("");
   
 
   const [showModal, setShowModal] = useState(false);
@@ -35,10 +35,9 @@ function HomePage() {
     appendedCount = appendedCount + 1;
     setShowNotes(appendedCount);
 
-    let tempColor = noteBackgroundColor;
-    tempColor = colorArray[id - 1];
-    getAppendedComponents();
-    setNoteBackgroundColor(tempColor);
+    let tempColor = colorArray[id - 1];
+    // setNoteBackgroundColor(tempColor);
+    getAppendedComponents(tempColor);
     console.log(goalContainerArray)
     
   };
@@ -50,11 +49,11 @@ function HomePage() {
   };
 
   // I have a function that loops to add the componets in a list
-  const getAppendedComponents = () => {
+  const getAppendedComponents = (tempColor) => {
     let appendedComponents = [...goalContainerArray];
       appendedComponents.unshift(
         <GoalContainer
-        backgroundColor={noteBackgroundColor} 
+        backgroundColor={tempColor} 
         onClick={openModal} 
         />
       );
