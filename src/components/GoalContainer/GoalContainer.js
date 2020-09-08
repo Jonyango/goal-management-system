@@ -3,9 +3,8 @@ import React from "react";
 const GoalContainer = ({ backgroundColor, onClick}) => {
   return (
     <div
-      id="single-goal"
       style={{
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor ===''?'tomato':backgroundColor,
         borderRadius: "12px",
         height: "200px",
         width: "200px",
@@ -15,6 +14,7 @@ const GoalContainer = ({ backgroundColor, onClick}) => {
       }}
       onClick={onClick}
     >
+      <span>click to add goal</span>
       {/* {goals.length === 0 ? (
         <p
           style={{
