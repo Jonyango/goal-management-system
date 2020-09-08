@@ -6,26 +6,27 @@ import Modal from "../components/Modal/Modal";
 import GoalContainer from "../components/GoalContainer/GoalContainer";
 import GoalInputForm from "../components/goal input form/GoalInputForm";
 
-let colorArray = ["#c6d947", "#f3542a", "#f5972c", "#7049f0", "#0aa4f6"];
+
 
 function HomePage() {
-  const [noteBackgroundColor, setNoteBackgroundColor] = useState("");
-  const [goalContainerArray, updateGoalContainerArray] = useState([]);
+  //The array below contains background Color for each goal container.
+  let colorArray = ["#c6d947", "#f3542a", "#f5972c", "#7049f0", "#0aa4f6"];
+  
+
+  const [goalContainerArray,updateGoalContainerArray]=useState([]);
+  const [goalsRegistryData, updateGoalsRegistryData] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
-  const [goalsRegistryData, updateGoalsRegistryData] = useState([]);
-
-  // when my button is clicked, I update the number count of the components added
+  
+// Get the id number of the button clicked and uses the id to access the color value in the array
   const onClickMethod = (event) => {
     const id = event.target.id;
-    let tempColor = noteBackgroundColor;
-    tempColor = colorArray[id - 1];
-    setNoteBackgroundColor(tempColor);
-    console.log(tempColor)
-    getAppendedComponents();
+    let tempColor = colorArray[id - 1];
+    getAppendedComponents(tempColor);
+    
   };
   
 
@@ -34,28 +35,29 @@ function HomePage() {
     let tempGoalRegistry = [...goalsRegistryData];
     tempGoalRegistry.push(newGoal);
     updateGoalsRegistryData(tempGoalRegistry);
+    console.log(tempGoalRegistry);
   };
 
-  // I have a function that loops to add the componets in a list
-  const getAppendedComponents = () => {
-    console.log("I am here");
+  //The function add goals to the goals array
+  const getAppendedComponents = (tempColor) => {
     let appendedComponents = [...goalContainerArray];
-    console.log(appendedComponents.length);
-
-    appendedComponents.unshift(
-      <GoalContainer backgroundColor={noteBackgroundColor} onClick={openModal} />
-    );
-    console.log()
-
+    let tempGoalRegistryData=[...goalsRegistryData]
+    console.log(tempGoalRegistryData)
+      appendedComponents.unshift(
+        <GoalContainer
+        backgroundColor={tempColor} 
+        onClick={openModal} 
+        goals={tempGoalRegistryData}
+        />
+      );
+    
     updateGoalContainerArray(appendedComponents);
-    console.log(appendedComponents);
   };
-  // getAppendedComponents();
 
   return (
     <div className="App">
       <SideNavigation onClickMethod={onClickMethod} />
-      <Goals currentNotes={goalContainerArray} showNotes="" />
+      <Goals currentNotes={goalContainerArray}/>
       <Quotes />
       <Modal
         handleCloseAndSave={closeModal}

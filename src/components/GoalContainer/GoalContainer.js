@@ -1,6 +1,6 @@
 import React from "react";
 
-const GoalContainer = ({ backgroundColor, onClick}) => {
+const GoalContainer = ({ backgroundColor, onClick,goals}) => {
   return (
     <div
       style={{
@@ -14,8 +14,7 @@ const GoalContainer = ({ backgroundColor, onClick}) => {
       }}
       onClick={onClick}
     >
-      <span>click to add goal</span>
-      {/* {goals.length === 0 ? (
+      {goals.length === 0 ? (
         <p
           style={{
             textAlign: "center",
@@ -38,7 +37,7 @@ const GoalContainer = ({ backgroundColor, onClick}) => {
             {goal.title}
           </p>
         ))
-      )} */}
+      )}
     </div>
   );
 };
