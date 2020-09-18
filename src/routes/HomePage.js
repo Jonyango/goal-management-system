@@ -33,15 +33,15 @@ function HomePage() {
 
   const handleGoalAdd = (newGoal) => {
     let tempGoalRegistry = [...goalsRegistryData];
-    tempGoalRegistry.push(newGoal);
+    tempGoalRegistry.unshift(newGoal);
     updateGoalsRegistryData(tempGoalRegistry);
     console.log(tempGoalRegistry);
   };
 
   //The function add goals to the goals array
   const getAppendedComponents = (tempColor) => {
-    let appendedComponents = [...goalContainerArray];
     let tempGoalRegistryData=[...goalsRegistryData]
+    let appendedComponents = [...goalContainerArray];
     console.log(tempGoalRegistryData)
       appendedComponents.unshift(
         <GoalContainer

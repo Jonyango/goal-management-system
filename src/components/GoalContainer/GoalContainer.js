@@ -1,10 +1,11 @@
 import React from "react";
 
-const GoalContainer = ({ backgroundColor, onClick,goals}) => {
+const GoalContainer = ({ backgroundColor, onClick, goals }) => {
   return (
     <div
       style={{
-        backgroundColor: backgroundColor ===''?'tomato':backgroundColor,
+        display: "flex",
+        backgroundColor: backgroundColor,
         borderRadius: "12px",
         height: "200px",
         width: "200px",
@@ -12,10 +13,19 @@ const GoalContainer = ({ backgroundColor, onClick,goals}) => {
         justifyContent: "center",
         cursor: "pointer",
       }}
-      onClick={onClick}
     >
+      {/* <span
+          style={{
+            textAlign:'center',
+            margin: "80px 60px",
+            fontWeight: "lighter",
+          }}
+        >
+          click to add goal
+        </span> */}
       {goals.length === 0 ? (
         <p
+          onClick={onClick}
           style={{
             textAlign: "center",
             margin: "80px 60px",
@@ -27,7 +37,7 @@ const GoalContainer = ({ backgroundColor, onClick,goals}) => {
       ) : (
         goals.map((goal) => (
           <p
-          key={goal.id}
+            key={goal.id}
             style={{
               textAlign: "center",
               margin: "80px 60px",
